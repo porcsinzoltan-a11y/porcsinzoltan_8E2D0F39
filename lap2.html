@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="cardContainer"></div>
+    <p style="color: yellowgreen;">Total: <span id="totalDisplay">0</span> Bells</p>
+
+    <!-- Nook Popup -->
+    <div id="nookPopup"
+        style="display: none; position: fixed; bottom: 20px; right: 20px; background-color: #fff; border: 2px solid #762e2e; padding: 10px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.3); text-align: center;">
+        <img src="nook.jpg" alt="Nook" style="width: 100px; height: auto; display: block; margin: 0 auto 10px;">
+        <p style="margin: 0; font-weight: bold;">Yes, yes that is a good choice!<br>It costs 500 Bells</p>
+    </div>
+
+    <script>
+        let osszes = 0;
+        const price = 500;
+
+        function BUY(id) {
+            osszes += price;
+            document.getElementById("totalDisplay").textContent = osszes;
+            if (osszes > 10000) {
+                window.location.href = "lap3.html";
+            }
+        }
+
+        function NOOK(id) {
+            document.getElementById("nookPopup").style.display = "block";
+        }
+
+        function HIDE_NOOK() {
+            document.getElementById("nookPopup").style.display = "none";
+        }
+
+        const itemNames = ["Net", "Shovel", "Fishing Rod", "Slingshot", "Axe"];
+        let cardsHTML = "";
+
+        for (let i = 1; i <= itemNames.length; i++) {
+            cardsHTML += `
+        <div id="nev${i}" class="card">
+          <img src="img${i}.png" alt="${itemNames[i - 1]}">
+          <p>${itemNames[i - 1]}</p>
+          <p>Price: ${price} Bells</p>
+          <button onclick="BUY(${i})" onmouseover="NOOK(${i})" onmouseout="HIDE_NOOK()">Buy</button>
+        </div>
+      `;
+        }
+
+        document.getElementById("cardContainer").innerHTML = cardsHTML;
+    </script>
+
+    <p style="font-style: italic; color: goldenrod;">
+        (Tip: Ah yes, yes! Loyal customers who visit often are always appreciated... and may find a surprise or two
+        waiting, hm?)
+    </p>
+
+</body>
+
+</html>

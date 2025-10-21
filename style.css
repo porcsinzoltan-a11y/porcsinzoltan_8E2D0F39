@@ -1,0 +1,50 @@
+body {
+    background-color: rgb(99, 10, 10);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    width: 160px;
+    display: inline-block;
+    text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+  
+  .card p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .card button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #762e2e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .card button:hover {
+    background-color: #a33c3c;
+  }
+  
